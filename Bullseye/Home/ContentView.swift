@@ -10,17 +10,14 @@ import SwiftUI
 
 struct ContentView: View {
     
-    //MARK:- Properties
+    //MARK: - Properties
     @State private var alertIsVisible = false
     @State private var sliderValue = 50.0
     @State private var targetValue = Int.random(in: 1...100)
     @State private var score = 0
     @State private var roundNo = 1
     
-   
-   
-
-    //MARK:- body
+    //MARK: - Body
     var body: some View {
         VStack {
             
@@ -31,14 +28,12 @@ struct ContentView: View {
             SliderView(sliderVal: $sliderValue)
             
             Spacer()
-            
-            BullseyeButton(title: "Hit me!"){
+            BullseyeButton(title: "Hit me!") {
                 self.alertIsVisible = true
             }
     
             Spacer()
             HStack {
-                
                 BullseyeButton(title: "Start Over"){
                     self.startNewGame()
                 }

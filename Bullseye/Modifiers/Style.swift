@@ -70,12 +70,12 @@ struct AboutHeadingStyle: ViewModifier {
 }
 
 struct AboutBodyStyle: ViewModifier {
-       func body(content: Content) -> some View {
-           return content
-               .foregroundColor(Color.black)
-               .font(Font.custom("Arial Rounded MT Bold", size: 16))
-               .padding(.trailing, 20)
-               .padding(.leading, 20)
-               .padding(.bottom, 20)
-       }
-   }
+    func body(content: Content) -> some View {
+        return content
+            .foregroundColor(Color.black)
+            .font(Font.custom("Arial Rounded MT Bold", size: 16))
+            .padding(.trailing, 20)
+            .padding(.leading, 20)
+            .padding(.bottom, 20)
+    }
+}

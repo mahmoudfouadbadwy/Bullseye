@@ -59,6 +59,7 @@ struct ContentView: View {
         }
         .background(Color(.brown))
         .navigationBarTitle("Bullseye")
+        .navigationBarTitleDisplayMode(.inline)
         .alert(isPresented: $alertIsVisible) {
             Alert(title: Text(alertTitle()),
                   message: Text("The slider's value is \(self.getRoundedValue()). \n" +

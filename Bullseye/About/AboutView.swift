@@ -23,7 +23,8 @@ struct AboutView: View {
                 Text("Enjoy!")
                     .modifier(AboutBodyStyle())
             }
-            .navigationBarTitle("About bullseye")
+            .navigationBarTitle("About")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
     

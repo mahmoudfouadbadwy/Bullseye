@@ -22,32 +22,39 @@ struct ContentView: View {
         NavigationView {
             GeometryReader { geo in
                 VStack {
+                    
                     TargetView(targetVal: self.targetValue)
                     
                     Spacer()
+                    
                     SliderView(sliderVal: $sliderValue)
-                        .padding(10)
                     
                     Spacer()
+                    
                     BullseyeButton(title: "Hit me!") {
                         self.alertIsVisible = true
                     }
                     
                     Spacer()
+                    
                     HStack {
-                        BullseyeButton(title: "Start Over"){
+                        
+                        BullseyeButton(title: "Start Over") {
                             self.startNewGame()
                         }
+                        
                         Spacer()
+                        
                         StaticText(txt: "Score:")
                         DynamicText(txt: "\(self.score)")
                         
                         Spacer()
-                        StaticText(txt: "Round:")
                         
+                        StaticText(txt: "Round:")
                         DynamicText(txt: "\(self.roundNo)")
                         
                         Spacer()
+                        
                         NavigationLink(destination: AboutView()) {
                             Text("Info")
                                 .modifier(ButtonLargeTextStyle())
@@ -61,7 +68,6 @@ struct ContentView: View {
                 .padding(.vertical, geo.size.height * 0.2)
                 .frame(width: geo.size.width, height: geo.size.height)
                 .background(Color(.brown))
-                .padding(.vertical, 10)
                 .alert(isPresented: $alertIsVisible) {
                     Alert(title: Text(alertTitle()),
                           message: Text("The slider's value is \(self.getRoundedValue()). \n" +
@@ -106,8 +112,8 @@ struct ContentView: View {
     private func alertTitle() -> String {
         let title: String
         switch (getDiffValue()) {
-        case 0 : title = "Perfect"
-        case 5 : title = "Not bad"
+        case 0...5 : title = "Perfect"
+        case 6...10 : title = "Not bad"
         default: title = "try again"
         }
         return title

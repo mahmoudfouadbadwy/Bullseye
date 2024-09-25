@@ -12,12 +12,12 @@ struct SliderView: View {
     @Binding var sliderVal: Double
     var body: some View {
         HStack {
-            
             StaticText(txt: "1")
             Slider(value: $sliderVal, in: 1...100)
                 .accentColor(Color.green)
             StaticText(txt: "100")
         }
+        .padding(10)
     }
 }
 
